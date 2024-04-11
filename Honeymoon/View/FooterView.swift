@@ -10,7 +10,7 @@ import SwiftUI
 struct FooterView: View {
     var body: some View {
         HStack {
-            Image(systemName: "xmarl.circle")
+            Image(systemName: "xmark.circle")
                 .font(.system(size: 42, weight: .light))
             Spacer()
             Button {

@@ -16,6 +16,7 @@ struct ContentView: View {
             // fixed: add apdding
                 .padding()
             Spacer()
+            FooterView()
         }
     }
 }
