@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State var showAlert: Bool = false
+    @State var showGuide: Bool = false
     
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(showGuideView: $showGuide)
             Spacer()
             CardView(honeymoon: honeymoonData[0])
             // fixed: add apdding
