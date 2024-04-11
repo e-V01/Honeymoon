@@ -14,6 +14,7 @@
 		9EB3B7F62BC7E1DA0059DC0E /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 9EB3B7F52BC7E1DA0059DC0E /* Sounds */; };
 		9EB3B7F92BC7E4E20059DC0E /* HoneymoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3B7F82BC7E4E20059DC0E /* HoneymoonModel.swift */; };
 		9EB3B7FC2BC7E52B0059DC0E /* HoneymoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3B7FB2BC7E52B0059DC0E /* HoneymoonData.swift */; };
+		9EB3B8002BC7E5BD0059DC0E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB3B7FF2BC7E5BD0059DC0E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9EB3B7F72BC7E3B10059DC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9EB3B7F82BC7E4E20059DC0E /* HoneymoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneymoonModel.swift; sourceTree = "<group>"; };
 		9EB3B7FB2BC7E52B0059DC0E /* HoneymoonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneymoonData.swift; sourceTree = "<group>"; };
+		9EB3B7FF2BC7E5BD0059DC0E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,7 @@
 			children = (
 				9EB3B7F72BC7E3B10059DC0E /* Info.plist */,
 				9EB3B7E72BC7E0660059DC0E /* HoneymoonApp.swift */,
-				9EB3B7E92BC7E0660059DC0E /* ContentView.swift */,
+				9EB3B7FE2BC7E5B30059DC0E /* View */,
 				9EB3B7F52BC7E1DA0059DC0E /* Sounds */,
 				9EB3B7EB2BC7E0680059DC0E /* Assets.xcassets */,
 				9EB3B7ED2BC7E0680059DC0E /* Preview Content */,
@@ -92,6 +94,15 @@
 				9EB3B7FB2BC7E52B0059DC0E /* HoneymoonData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9EB3B7FE2BC7E5B30059DC0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9EB3B7E92BC7E0660059DC0E /* ContentView.swift */,
+				9EB3B7FF2BC7E5BD0059DC0E /* CardView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				9EB3B7F92BC7E4E20059DC0E /* HoneymoonModel.swift in Sources */,
 				9EB3B7EA2BC7E0660059DC0E /* ContentView.swift in Sources */,
 				9EB3B7E82BC7E0660059DC0E /* HoneymoonApp.swift in Sources */,
+				9EB3B8002BC7E5BD0059DC0E /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
