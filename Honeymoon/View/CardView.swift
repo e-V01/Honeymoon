@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct CardView: View, Identifiable {
     let id = UUID()
     var honeymoon: Destination
     
@@ -50,5 +50,5 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(honeymoon: honeymoonData[1])
+    CardView(honeymoon: honeymoonData[0])
 }
