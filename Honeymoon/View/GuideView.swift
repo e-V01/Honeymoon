@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GuideView: View {
-    @Environment(\.presentationMode) var pM
+    @Environment(\.dismiss) private var dismiss
     // dismiss sheet view
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -43,7 +43,7 @@ struct GuideView: View {
                 Spacer(minLength: 10)
                 
                 Button {
-                    self.pM.wrappedValue.dismiss()
+                    dismiss()
                 } label: {
                     Text("Continue".uppercased())
                         .modifier(ButtonModifier())
