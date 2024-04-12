@@ -25,12 +25,8 @@ struct InfoView: View {
                     .fontWeight(.black)
                     .modifier(TitleModifier())
                 
-                HStack {
-                    Text("Photos")
-                        .foregroundStyle(Color.gray)
-                    Spacer()
-                    Text("Unsplash")
-                }
+                CreditsView()
+                
                 Spacer(minLength: 10)
                 
                 Button {
