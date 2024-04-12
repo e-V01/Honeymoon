@@ -19,8 +19,7 @@ struct GuideView: View {
                 
                 Text("Get Started")
                     .fontWeight(.black)
-                    .font(.largeTitle)
-                    .foregroundStyle(Color.pink)
+                    .modifier(TitleModifier())
                 
                 Text("Discover and pick the perfect destination. \n HoneyMoon")
                     .lineLimit(nil)
@@ -45,13 +44,9 @@ struct GuideView: View {
                 
                 Button {
                     self.pM.wrappedValue.dismiss()
-                }label: {
+                } label: {
                     Text("Continue".uppercased())
-                        .font(.headline)
-                        .padding()
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(Capsule().fill(Color.pink))
-                        .foregroundStyle(Color.white)
+                        .modifier(ButtonModifier())
                 }
                 
             }
