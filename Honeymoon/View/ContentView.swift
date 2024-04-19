@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var showAlert: Bool = false
     @State var showGuide: Bool = false
     @State var showInfo: Bool = false
+    @GestureState private var dragState = DragState.inactive
     
     // MARK: - Card views
     var cardViews: [CardView] = {
@@ -67,6 +68,9 @@ struct ContentView: View {
             // MARK: - Header
             HeaderView(showGuideView: $showGuide,
                        showInfoView: $showInfo)
+            .opacity(dragState.isDragging ? 0.0 : 1.0)
+            .animation(.default)
+            
             Spacer()
             
             // MARK: - Cards
@@ -74,6 +78,26 @@ struct ContentView: View {
                 ForEach(cardViews) { cardView in
                     cardView
                         .zIndex(self.isTopCard(cardView: cardView) ? 1 : 0)
+                        .offset(x: self.isTopCard(cardView: cardView) ?
+                                    self.dragState.translation.width : 0,
+                                y: self.isTopCard(cardView: cardView) ?
+                                self.dragState.translation.height : 0)
+                        .scaleEffect(self.dragState.isDragging && self.isTopCard(cardView: cardView) ? 0.85 : 1.0)
+                        .rotationEffect(Angle(degrees: self.isTopCard(cardView: cardView) ? Double(self.dragState.translation.width / 12) : 0))
+                        .animation(.interpolatingSpring(stiffness: 120, damping: 120))
+                        .gesture(LongPressGesture(minimumDuration: 0.01)
+                            .sequenced(before: DragGesture())
+                            .updating(self.$dragState, body: { (value, state, translation) in
+                                switch value {
+                                case .first(true):
+                                    state = .pressing
+                                case .second(true, let drag):
+                                    state = .dragging(translation: drag?.translation ?? .zero)
+                                default:
+                                    break
+                                }
+                            })
+                        )
                 }
             }
             .padding(.horizontal)
@@ -81,6 +105,8 @@ struct ContentView: View {
             
             // MARK: - Footer
             FooterView(showBookingAlert: $showAlert)
+                .opacity(dragState.isDragging ? 0.0 : 1.0)
+                .animation(.default)
         }
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Success"),
